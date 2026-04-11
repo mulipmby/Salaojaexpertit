@@ -3,75 +3,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
-  /* 🔴 LISÄÄ NÄMÄ */
   --primary: #2563eb;
-  --primary-foreground: #ffffff;
-
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
-
   --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #2563eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 🔥 tärkein fix: offset headerille */
+section {
+  scroll-margin-top: 96px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-/* global.css */
-.input {
-  @apply w-full h-11 px-4 rounded-md border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500;
-}
-.label {
-  @apply block text-sm font-medium mb-1.5 text-gray-700;
-}
-
-.icon-box {
-  @apply w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center;
-}
-
-.link-text {
-  @apply text-gray-500 text-sm group-hover:text-blue-600 transition;
-}
-
-.success-icon {
-  @apply w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4;
-}
-
-.city-pill {
-  @apply px-4 py-2 rounded-md bg-gray-100 text-sm font-medium hover:bg-blue-600 hover:text-white transition;
-}
-
-.footer-link {
-  @apply hover:text-white transition;
-}@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-up {
-  animation: fade-up 0.6s ease forwards;
 }

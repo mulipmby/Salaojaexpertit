@@ -48,7 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="yhteystiedot" className="py-20 md:py-24 bg-[#F3F5F6]">
+    <section id="yhteystiedot" className="scroll-mt-24 py-20 md:py-24 bg-[#F3F5F6]">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* OTSIKKO */}

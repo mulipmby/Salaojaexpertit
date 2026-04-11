@@ -14,39 +14,52 @@ export const Header = () => {
     { label: "Yhteystiedot", href: "#yhteystiedot" },
   ];
 
+  const handleScroll = (href: string) => {
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+
+    setOpen(false);
+
+    if (!el) return;
+
+    setTimeout(() => {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
-
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* TEXT LOGO */}
-        <Link href="#" className="flex items-center">
-          <span className="font-serif text-[18px] md:text-[20px] text-black tracking-tight">
-            Salaojaexpertit Oy
-          </span>
+        {/* LOGO */}
+        <Link href="#" className="font-serif text-[18px] md:text-[20px] text-black">
+          Salaojaexpertit Oy
         </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link
+            <button
               key={item.href}
-              href={item.href}
-              className="text-sm text-gray-700 hover:text-blue-600 transition"
+              onClick={() => handleScroll(item.href)}
+              className="cursor-pointer text-sm text-gray-700 hover:text-blue-600 transition "
             >
               {item.label}
-            </Link>
+            </button>
           ))}
         </nav>
 
-        {/* CTA (desktop) */}
+        {/* CTA */}
         <div className="hidden md:block">
-          <Link
-            href="#yhteystiedot"
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg transition"
+          <button
+            onClick={() => handleScroll("#yhteystiedot")}
+            className="cursor-pointer bg-[#0049D0] hover:bg-[#003aa3] text-white text-sm px-4 py-2 rounded-lg transition"
           >
             Pyydä tarjous
-          </Link>
+          </button>
         </div>
 
         {/* MOBILE BUTTON */}
@@ -58,7 +71,6 @@ export const Header = () => {
           <span className="w-6 h-0.5 bg-black"></span>
           <span className="w-6 h-0.5 bg-black"></span>
         </button>
-
       </div>
 
       {/* MOBILE MENU */}
@@ -67,28 +79,25 @@ export const Header = () => {
           <div className="px-6 py-4 flex flex-col gap-4">
 
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="text-gray-700 text-sm hover:text-blue-600 transition"
+                onClick={() => handleScroll(item.href)}
+                className="text-left text-gray-700 text-sm hover:text-blue-600 transition"
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
 
-            <Link
-              href="#yhteystiedot"
-              onClick={() => setOpen(false)}
+            <button
+              onClick={() => handleScroll("#yhteystiedot")}
               className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg text-center"
             >
               Pyydä tarjous
-            </Link>
+            </button>
 
           </div>
         </div>
       )}
-
     </header>
   );
 };
