@@ -7,11 +7,11 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
 
   const navItems = [
-    { label: "Etusivu", href: "#" },
-    { label: "Palvelut", href: "#palvelut" },
-    { label: "Prosessi", href: "#prosessi" },
-    { label: "Toimialue", href: "#toimialue" },
-    { label: "Yhteystiedot", href: "#yhteystiedot" },
+    { label: "Etusivu", href: "/" },
+    { label: "Palvelut", href: "/#palvelut" },
+    { label: "Prosessi", href: "/#prosessi" },
+    { label: "Toimialue", href: "/#toimialue" },
+    { label: "Yhteystiedot", href: "/#yhteystiedot" },
   ];
 
   const handleScroll = (href: string) => {
@@ -35,20 +35,20 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* LOGO */}
-        <Link href="#" className="font-serif text-[18px] md:text-[20px] text-black">
+        <Link href="/" className="font-serif text-[18px] md:text-[20px] text-black">
           Salaojaexpertit Oy
         </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <button
-              key={item.href}
-              onClick={() => handleScroll(item.href)}
-              className="cursor-pointer text-sm text-gray-700 hover:text-blue-600 transition "
-            >
-              {item.label}
-            </button>
+           <Link
+  key={item.href}
+  href={item.href}
+  className="text-sm text-gray-700 hover:text-blue-600 transition"
+>
+  {item.label}
+</Link>
           ))}
         </nav>
 
@@ -79,17 +79,17 @@ export const Header = () => {
           <div className="px-6 py-4 flex flex-col gap-4">
 
             {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => handleScroll(item.href)}
-                className="text-left text-gray-700 text-sm hover:text-blue-600 transition"
-              >
-                {item.label}
-              </button>
+                <Link
+  key={item.href}
+  href={item.href}
+  className="text-sm text-gray-700 hover:text-blue-600 transition"
+>
+  {item.label}
+</Link>
             ))}
 
             <button
-              onClick={() => handleScroll("#yhteystiedot")}
+              onClick={() => handleScroll("/#yhteystiedot")}
               className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg text-center"
             >
               Pyydä tarjous

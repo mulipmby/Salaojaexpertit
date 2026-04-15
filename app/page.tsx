@@ -10,7 +10,7 @@ import Services from "./components/Services";
 export default function Home() {
   return (
     <div className="">
-      <main className=" bg-white">
+      <main id="#" className=" bg-white">
         <Header/>
         <Hero/>
         <Services/>
