@@ -1,22 +1,34 @@
 'use client';
 import ScrollReveal from "./ScrollReveal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faBuilding,
+  faTree,
+  faTruck,
+  faCoins
+} from "@fortawesome/free-solid-svg-icons";
 
 const services = [
   {
     title: "Omakotitalot",
     desc: "Täydelliset salaoja- ja hulevesiremontit omakotitaloihin. Suojaa talosi perustukset kosteudelta.",
+    icon: faHouse,
   },
   {
     title: "Taloyhtiöt",
     desc: "Ammattitaitoinen salaojaremontti taloyhtiöille. Kiinteähintainen tarjous ilman yllätyksiä.",
+    icon: faBuilding,
   },
   {
     title: "Vapaa-ajan asunnot",
     desc: "Mökkien ja loma-asuntojen salaojitukset kestävästi ja luotettavasti.",
+    icon: faTree,
   },
   {
     title: "Nykyaikainen kalusto",
     desc: "Käytössämme on tehokas ja tarkoituksenmukainen kalusto kaikenlaisiin kohteisiin.",
+    icon: faTruck,
   },
 ];
 
@@ -49,7 +61,10 @@ const Services = () => {
               <div className="group rounded-xl p-5 md:p-6 h-full border border-gray-200 bg-white hover:border-blue-600/40 hover:shadow-md hover:shadow-blue-100/50 transition-all duration-300">
 
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4 md:mb-5 transition-colors duration-300 group-hover:bg-blue-600">
-                  {/* Icon placeholder */}
+                <FontAwesomeIcon
+  icon={s.icon}
+  className="text-blue-600 text-[18px] md:text-[20px] group-hover:text-white transition-colors duration-300"
+/>
                 </div>
 
                 <h3 className="font-serif text-[18px] md:text-[20px] text-black mb-2">
@@ -69,7 +84,10 @@ const Services = () => {
           <div className="mt-12 md:mt-16 flex items-start gap-4 md:gap-5 bg-gray-100 rounded-xl p-5 md:p-6 max-w-xl mx-auto">
 
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
-              {/* Icon placeholder */}
+               <FontAwesomeIcon
+  icon={faCoins}
+  className="text-blue-600 text-[18px] md:text-[20px] group-hover:text-white transition-colors duration-300"
+/>
             </div>
 
             <div>
