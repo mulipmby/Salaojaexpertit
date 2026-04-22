@@ -96,7 +96,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                 <a href="tel:044335253" className="block hover:text-blue-600 transition">
                   <p className="font-semibold text-[14px] text-black">Mikael Tissari</p>
-                  <p className="text-[13px] md:text-sm">044 335 253</p>
+                  <p className="text-[13px] md:text-sm">044 335 0253</p>
                 </a>
 
                 <a href="tel:04578749401" className="block hover:text-blue-600 transition">

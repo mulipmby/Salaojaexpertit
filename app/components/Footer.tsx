@@ -29,7 +29,7 @@ export const Footer = () => {
               href="tel:044335253"
               className="hover:text-white transition"
             >
-              044 335 253
+              044 335 0253
             </a>
             <a
               href="tel:04578749401"
